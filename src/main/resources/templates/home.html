@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        th, td {
+            padding: 5px;
+        }
+        table  {
+            border-collapse: collapse;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h3>Use Publisher Database</h3>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+        </tr>
+        <th:block th:each="publisher : ${publishers}">
+            <tr>
+                <td th:text="${publisher.getId()}"></td>
+                <td th:text="${publisher.getName()}"></td>
+            </tr>
+        </th:block>
+    </table>
+
+
+    <h3>Use Advertiser Database</h3>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+        </tr>
+        <th:block th:each="advertiser : ${advertisers}">
+            <tr>
+                <td th:text="${advertiser.getId()}"></td>
+                <td th:text="${advertiser.getName()}"></td>
+            </tr>
+        </th:block>
+    </table>
+
+</body>
+</html>
