@@ -5,8 +5,10 @@ import java.sql.Timestamp;
 
 @Entity
 @Table(name = "employee", schema = "public", catalog = "ttcntt")
-@NamedStoredProcedureQuery(name = "sp_whileloop",procedureName = "sp_whileloop",resultClasses = EmployeeEntity.class)
-public class EmployeeEntity {
+@NamedStoredProcedureQuery(name = "sp_whileloop", procedureName = "sp_whileloop", resultClasses = EmployeeEntity3.class, parameters = {
+        @StoredProcedureParameter(mode = ParameterMode.IN,type = Double.class,name = "number")
+})
+public class EmployeeEntity3 {
     private int id;
     private String fullname;
     private String sex;
@@ -79,7 +81,7 @@ public class EmployeeEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        EmployeeEntity that = (EmployeeEntity) o;
+        EmployeeEntity3 that = (EmployeeEntity3) o;
 
         if (id != that.id) return false;
         if (fullname != null ? !fullname.equals(that.fullname) : that.fullname != null) return false;

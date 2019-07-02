@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/mycss.css">
+
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400' rel='stylesheet' type='text/css'>
+
+<!--    <script src="/js/jquery.js"></script>-->
+    <!--
+    <script src="/js/main.js"></script>
+-->
+    <script>
+        $('.horizontal .progress-fill span').each(function(){
+            var percent = $(this).html();
+            $(this).parent().css('width', percent);
+        });
+
+
+        $('.vertical .progress-fill span').each(function(){
+            var percent = $(this).html();
+            var pTop = 100 - ( percent.slice(0, percent.length - 1) ) + "%";
+            $(this).parent().css({
+                'height' : percent,
+                'top' : pTop
+            });
+        });
+
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("p").hide();
+            });
+        });
+
+        window.onload = function () {
+
+            var chart = new CanvasJS.Chart("chartContainer", {
+                animationEnabled: true,
+
+                title:{
+                    text:"Fortune 500 Companies by Country"
+                },
+                axisX:{
+                    interval: 1
+                },
+                axisY2:{
+                    interlacedColor: "rgba(1,77,101,.2)",
+                    gridColor: "rgba(1,77,101,.1)",
+                    title: "Number of Companies"
+                },
+                data: [{
+                    type: "bar",
+                    name: "companies",
+                    axisYType: "secondary",
+                    color: "#014D65",
+                    dataPoints: [
+                        { y: 3, label: "Sweden" },
+                        { y: 7, label: "Taiwan" },
+                        { y: 5, label: "Russia" },
+                        { y: 9, label: "Spain" },
+                        { y: 7, label: "Brazil" },
+                        { y: 7, label: "India" },
+                        { y: 9, label: "Italy" },
+                        { y: 8, label: "Australia" },
+                        { y: 11, label: "Canada" },
+                        { y: 15, label: "South Korea" },
+                        { y: 12, label: "Netherlands" },
+                        { y: 15, label: "Switzerland" },
+                        { y: 25, label: "Britain" },
+                        { y: 28, label: "Germany" },
+                        { y: 29, label: "France" },
+                        { y: 52, label: "Japan" },
+                        { y: 103, label: "China" },
+                        { y: 134, label: "US" }
+                    ]
+                }]
+            });
+            chart.render();
+
+        }
+    </script>
+</head>
+<body>
+
+    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+    <!---->
+    <h2>This is a heading</h2>
+
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+
+    <button>Click me</button>
+
+
+    <!-- ////////////////////////////// -->
+
+    <div class="graph-cont">
+        <h1>Responsive CSS Only Animated Bar Graph</h1>
+        <div class="bar bar1">60</div>
+        <div class="bar bar2">72</div>
+        <div class="bar bar3">47</div>
+        <div class="bar bar4">20</div>
+    </div>
+
+
+    <!-- Horizontal, rounded -->
+
+    <div class="container horizontal rounded">
+        <h2>Horizontal, Rounded</h2>
+        <div class="progress-bar horizontal">
+            <div class="progress-track">
+                <div class="progress-fill">
+                    <span>100%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-bar horizontal">
+            <div class="progress-track">
+                <div class="progress-fill">
+                    <span>75%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-bar horizontal">
+            <div class="progress-track">
+                <div class="progress-fill">
+                    <span>60%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-bar horizontal">
+            <div class="progress-track">
+                <div class="progress-fill">
+                    <span>20%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-bar horizontal">
+            <div class="progress-track">
+                <div class="progress-fill">
+                    <span>34%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-bar horizontal">
+            <div class="progress-track">
+                <div class="progress-fill">
+                    <span>82%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Horizontal, flat -->
+
+    <div class="container horizontal flat">
+        <h2>Horizontal, Flat</h2>
+        <div class="progress-bar horizontal">
+            <div class="progress-track">
+                <div class="progress-fill">
+                    <span>100%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-bar horizontal">
+            <div class="progress-track">
+                <div class="progress-fill">
+                    <span>75%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-bar horizontal">
+            <div class="progress-track">
+                <div class="progress-fill">
+                    <span>60%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-bar horizontal">
+            <div class="progress-track">
+                <div class="progress-fill">
+                    <span>20%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-bar horizontal">
+            <div class="progress-track">
+                <div class="progress-fill">
+                    <span>34%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-bar horizontal">
+            <div class="progress-track">
+                <div class="progress-fill">
+                    <span>82%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Vertical, rounded -->
+
+
+    <div class="container vertical rounded">
+        <h2>Vertical, Rounded</h2>
+        <div class="progress-bar">
+            <div class="progress-track">
+                <div class="progress-fill">
+                    <span>100%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-track">
+                <div class="progress-fill">
+                    <span>75%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-track">
+                <div class="progress-fill">
+                    <span>60%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-track">
+                <div class="progress-fill">
+                    <span>20%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-track">
+                <div class="progress-fill">
+                    <span>34%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-track">
+                <div class="progress-fill">
+                    <span>82%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Vertical, flat -->
+
+
+    <div class="container vertical flat">
+        <h2>Vertical, Flat</h2>
+        <div class="progress-bar">
+            <div class="progress-track">
+                <div class="progress-fill">
+                    <span>100%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-track">
+                <div class="progress-fill">
+                    <span>75%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-track">
+                <div class="progress-fill">
+                    <span>60%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-track">
+                <div class="progress-fill">
+                    <span>20%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-track">
+                <div class="progress-fill">
+                    <span>34%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-track">
+                <div class="progress-fill">
+                    <span>82%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
